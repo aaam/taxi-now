@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D152CE81634CA6F0081239D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D152CE71634CA6F0081239D /* CoreLocation.framework */; };
 		4DBDA817161A8870005B0E11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA816161A8870005B0E11 /* UIKit.framework */; };
 		4DBDA819161A8870005B0E11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA818161A8870005B0E11 /* Foundation.framework */; };
 		4DBDA81B161A8870005B0E11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA81A161A8870005B0E11 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D152CE71634CA6F0081239D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DBDA812161A8870005B0E11 /* TaxiNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDA816161A8870005B0E11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DBDA818161A8870005B0E11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D152CE81634CA6F0081239D /* CoreLocation.framework in Frameworks */,
 				4DBDA817161A8870005B0E11 /* UIKit.framework in Frameworks */,
 				4DBDA819161A8870005B0E11 /* Foundation.framework in Frameworks */,
 				4DBDA81B161A8870005B0E11 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +81,7 @@
 		4DBDA815161A8870005B0E11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D152CE71634CA6F0081239D /* CoreLocation.framework */,
 				4DBDA816161A8870005B0E11 /* UIKit.framework */,
 				4DBDA818161A8870005B0E11 /* Foundation.framework */,
 				4DBDA81A161A8870005B0E11 /* CoreGraphics.framework */,
@@ -277,7 +281,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiNow/TaxiNow-Prefix.pch";
 				INFOPLIST_FILE = "TaxiNow/TaxiNow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -288,7 +294,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiNow/TaxiNow-Prefix.pch";
 				INFOPLIST_FILE = "TaxiNow/TaxiNow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -312,6 +320,7 @@
 				4DBDA83E161A8870005B0E11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

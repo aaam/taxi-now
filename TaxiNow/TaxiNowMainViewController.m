@@ -12,7 +12,12 @@
 
 @end
 
+@interface CurrentLocation  ()
+
+@end
+
 @implementation TaxiNowMainViewController
+@synthesize label;
 
 - (void)viewDidLoad
 {
@@ -23,7 +28,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Dispose of any resourcces that can be recreated.
 }
 
 #pragma mark - Flipside View Controller
@@ -64,6 +69,61 @@
     } else {
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
+}
+
+
+// This is the callTaxi button implementation
+// TODO: this must reference CurrentLocation  method?
+- (IBAction)callTaxi:(UIButton *)sender {
+    
+    // allocate and initialize object instance x as CurrentLocation Class
+    CurrentLocation *x = [[CurrentLocation alloc] init];
+    // call findLocation method of x instance (CurrentLocation class)
+    [x findLocation];
+    
+}
+
+- (void)viewDidUnload {
+    [self setLabel:nil];
+    [super viewDidUnload];
+}
+@end
+
+// Location class
+@implementation CurrentLocation 
+@synthesize locationManager, currentLocation;
+
+// Location deletegate methods
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    self.currentLocation = newLocation;
+    
+    if(newLocation.horizontalAccuracy <= 100.0f) { [locationManager stopUpdatingLocation]; }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+
+    if(error.code == kCLErrorDenied) {
+        [locationManager stopUpdatingLocation];
+    } else if(error.code == kCLErrorLocationUnknown) {
+        // retry
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error retrieving location"
+                               message:[error description]
+                               delegate:nil
+                               cancelButtonTitle:@"OK"
+                               otherButtonTitles:nil];
+        [alert show];
+    }
+    
+}
+
+- (void) findLocation {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
 }
 
 @end
