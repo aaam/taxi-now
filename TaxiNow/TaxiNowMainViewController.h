@@ -7,6 +7,7 @@
 //
 
 #import "TaxiNowFlipsideViewController.h"
+#import "LocationController.h"
 
 @interface TaxiNowMainViewController : UIViewController <TaxiNowFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
 
@@ -16,21 +17,10 @@
 - (IBAction)callTaxi:(UIButton *)sender;
 
 // This is the text label output interface
-@property (weak, nonatomic) IBOutlet UILabel *label;
+//@property (weak, nonatomic) IBOutlet UILabel *latitude;
+@property (weak, nonatomic) IBOutlet UILabel *coordinates;
+
+@property (strong, nonatomic) LocationController *locationController;
 
 @end
 
-@interface CurrentLocation  : NSObject <CLLocationManagerDelegate> {
-    CLLocationManager *locationManager;}
-
-- (void)locationManager:(CLLocationManager *)manager
-didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error;
-
-- (void) findLocation;
-
-@property (strong, nonatomic) CLLocationManager *locationManager;
-
-@property (strong, nonatomic) CLLocation *currentLocation;
-@end

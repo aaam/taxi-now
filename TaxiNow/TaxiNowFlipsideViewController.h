@@ -18,6 +18,10 @@
 
 @property (weak, nonatomic) id <TaxiNowFlipsideViewControllerDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UITextField *emailAddress;
+
+@property (copy, nonatomic) NSString *userName;
+
 - (IBAction)done:(id)sender;
 
 @end

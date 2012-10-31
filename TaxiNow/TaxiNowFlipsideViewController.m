@@ -39,4 +39,8 @@
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
+- (void)viewDidUnload {
+    [self setEmailAddress:nil];
+    [super viewDidUnload];
+}
 @end

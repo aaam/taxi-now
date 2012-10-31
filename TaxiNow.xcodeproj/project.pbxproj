@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D152CE81634CA6F0081239D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D152CE71634CA6F0081239D /* CoreLocation.framework */; };
+		4DB05476163E0B3D00F6C1FE /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB05475163E0B3D00F6C1FE /* LocationController.m */; };
+		4DB0547A1640BC8F00F6C1FE /* SendLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB054791640BC8F00F6C1FE /* SendLocation.m */; };
 		4DBDA817161A8870005B0E11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA816161A8870005B0E11 /* UIKit.framework */; };
 		4DBDA819161A8870005B0E11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA818161A8870005B0E11 /* Foundation.framework */; };
 		4DBDA81B161A8870005B0E11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA81A161A8870005B0E11 /* CoreGraphics.framework */; };
@@ -25,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		4D152CE71634CA6F0081239D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4DB05474163E0B3D00F6C1FE /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		4DB05475163E0B3D00F6C1FE /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		4DB054781640BC8F00F6C1FE /* SendLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendLocation.h; sourceTree = "<group>"; };
+		4DB054791640BC8F00F6C1FE /* SendLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendLocation.m; sourceTree = "<group>"; };
 		4DBDA812161A8870005B0E11 /* TaxiNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDA816161A8870005B0E11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DBDA818161A8870005B0E11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +98,8 @@
 		4DBDA81C161A8870005B0E11 /* TaxiNow */ = {
 			isa = PBXGroup;
 			children = (
+				4DB05474163E0B3D00F6C1FE /* LocationController.h */,
+				4DB05475163E0B3D00F6C1FE /* LocationController.m */,
 				4DBDA825161A8870005B0E11 /* TaxiNowAppDelegate.h */,
 				4DBDA826161A8870005B0E11 /* TaxiNowAppDelegate.m */,
 				4DBDA82E161A8870005B0E11 /* MainStoryboard_iPhone.storyboard */,
@@ -100,6 +108,8 @@
 				4DBDA835161A8870005B0E11 /* TaxiNowMainViewController.m */,
 				4DBDA837161A8870005B0E11 /* TaxiNowFlipsideViewController.h */,
 				4DBDA838161A8870005B0E11 /* TaxiNowFlipsideViewController.m */,
+				4DB054781640BC8F00F6C1FE /* SendLocation.h */,
+				4DB054791640BC8F00F6C1FE /* SendLocation.m */,
 				4DBDA81D161A8870005B0E11 /* Supporting Files */,
 			);
 			path = TaxiNow;
@@ -191,6 +201,8 @@
 				4DBDA827161A8870005B0E11 /* TaxiNowAppDelegate.m in Sources */,
 				4DBDA836161A8870005B0E11 /* TaxiNowMainViewController.m in Sources */,
 				4DBDA839161A8870005B0E11 /* TaxiNowFlipsideViewController.m in Sources */,
+				4DB05476163E0B3D00F6C1FE /* LocationController.m in Sources */,
+				4DB0547A1640BC8F00F6C1FE /* SendLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
