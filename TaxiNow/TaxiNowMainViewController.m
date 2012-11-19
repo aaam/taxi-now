@@ -75,13 +75,33 @@
     // Send lat and long to email view
 //    messageController = [[SendLocation alloc] init];
 //    messageController.mailComposeDelegate = self;
-    [messageController sendMessage];
+//    [messageController sendMessage: sender];
     
 ////    presentModalViewController works from here, but not from sendLocation.m - why?
-    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+//    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
 //    controller.mailComposeDelegate = self;
+//    if (controller) [self presentModalViewController:controller animated:YES];
+    
+    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
+    
+    NSArray *receipients = @[@"murphman.b@gmail.com"];
+    [controller setToRecipients: receipients];
+    [controller setSubject:@"Coordinates"];
+    [controller setMessageBody:coords isHTML:YES];
     if (controller) [self presentModalViewController:controller animated:YES];
     
+}
+
+//Move to mail view controller
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload {

@@ -8,6 +8,9 @@
 
 #import "SendLocation.h"
 
+@interface SendLocation ()
+@end
+
 @implementation SendLocation
 
 - (void)viewDidLoad {
@@ -17,13 +20,13 @@
 }
 
 //Method stub - designed to allow program to determine how to send message
--(void) sendMessage {
+-(void) sendMessage: (id) sender {
     
 //    Send my email only implemented method
-    [self sendEmail];
+    [self sendEmail: sender];
 }
 
-- (void) sendEmail {
+- (void) sendEmail: (id) sender {
 
     NSArray *receipients = @[@"murphman.b@gmail.com"];
 //    receipients = @[@"murphman.b@gmail.com"];
@@ -33,6 +36,7 @@
         // Show the composer
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
+//        controller.mailComposeDelegate = sender;
         [controller setToRecipients: receipients];
         [controller setSubject:@"My Subject"];
         [controller setMessageBody:@"Hello there." isHTML:NO];

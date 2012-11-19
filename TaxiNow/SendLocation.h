@@ -14,6 +14,6 @@
 
 @property (copy, nonatomic) NSString *emailAddress;
 
-- (void) sendMessage;
+- (void) sendMessage: (id)sender;
 
 @end
