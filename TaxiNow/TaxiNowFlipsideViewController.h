@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SendLocation.h"
 
 @class TaxiNowFlipsideViewController;
 
@@ -14,13 +15,18 @@
 - (void)flipsideViewControllerDidFinish:(TaxiNowFlipsideViewController *)controller;
 @end
 
-@interface TaxiNowFlipsideViewController : UIViewController
+// UITextFieldDelegate must be added for keyboad to disappear on Return
+@interface TaxiNowFlipsideViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id <TaxiNowFlipsideViewControllerDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UITextField *emailAddress;
+// For this to work, textField must be Ctrl-Dragged to Controller in
+// Storyboad; select outlet delegate
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
-@property (copy, nonatomic) NSString *userName;
+@property (copy, nonatomic) NSString *emailAddress;
+
+@property (strong, nonatomic) SendLocation *sendLocation;
 
 - (IBAction)done:(id)sender;
 

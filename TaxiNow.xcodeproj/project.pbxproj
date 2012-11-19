@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0E5A5F1659982000C6B05D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0E5A5E1659982000C6B05D /* MessageUI.framework */; };
 		4D152CE81634CA6F0081239D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D152CE71634CA6F0081239D /* CoreLocation.framework */; };
 		4DB05476163E0B3D00F6C1FE /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB05475163E0B3D00F6C1FE /* LocationController.m */; };
 		4DB0547A1640BC8F00F6C1FE /* SendLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB054791640BC8F00F6C1FE /* SendLocation.m */; };
 		4DBDA817161A8870005B0E11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA816161A8870005B0E11 /* UIKit.framework */; };
-		4DBDA819161A8870005B0E11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA818161A8870005B0E11 /* Foundation.framework */; };
+		4DBDA819161A8870005B0E11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA818161A8870005B0E11 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4DBDA81B161A8870005B0E11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBDA81A161A8870005B0E11 /* CoreGraphics.framework */; };
 		4DBDA821161A8870005B0E11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDA81F161A8870005B0E11 /* InfoPlist.strings */; };
 		4DBDA823161A8870005B0E11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDA822161A8870005B0E11 /* main.m */; };
@@ -20,12 +21,12 @@
 		4DBDA82B161A8870005B0E11 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDA82A161A8870005B0E11 /* Default@2x.png */; };
 		4DBDA82D161A8870005B0E11 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDA82C161A8870005B0E11 /* Default-568h@2x.png */; };
 		4DBDA830161A8870005B0E11 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDA82E161A8870005B0E11 /* MainStoryboard_iPhone.storyboard */; };
-		4DBDA833161A8870005B0E11 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDA831161A8870005B0E11 /* MainStoryboard_iPad.storyboard */; };
 		4DBDA836161A8870005B0E11 /* TaxiNowMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDA835161A8870005B0E11 /* TaxiNowMainViewController.m */; };
 		4DBDA839161A8870005B0E11 /* TaxiNowFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDA838161A8870005B0E11 /* TaxiNowFlipsideViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0E5A5E1659982000C6B05D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4D152CE71634CA6F0081239D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DB05474163E0B3D00F6C1FE /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		4DB05475163E0B3D00F6C1FE /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		4DBDA82A161A8870005B0E11 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4DBDA82C161A8870005B0E11 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4DBDA82F161A8870005B0E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		4DBDA832161A8870005B0E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		4DBDA834161A8870005B0E11 /* TaxiNowMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiNowMainViewController.h; sourceTree = "<group>"; };
 		4DBDA835161A8870005B0E11 /* TaxiNowMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiNowMainViewController.m; sourceTree = "<group>"; };
 		4DBDA837161A8870005B0E11 /* TaxiNowFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiNowFlipsideViewController.h; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0E5A5F1659982000C6B05D /* MessageUI.framework in Frameworks */,
 				4D152CE81634CA6F0081239D /* CoreLocation.framework in Frameworks */,
 				4DBDA817161A8870005B0E11 /* UIKit.framework in Frameworks */,
 				4DBDA819161A8870005B0E11 /* Foundation.framework in Frameworks */,
@@ -87,6 +88,7 @@
 		4DBDA815161A8870005B0E11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D0E5A5E1659982000C6B05D /* MessageUI.framework */,
 				4D152CE71634CA6F0081239D /* CoreLocation.framework */,
 				4DBDA816161A8870005B0E11 /* UIKit.framework */,
 				4DBDA818161A8870005B0E11 /* Foundation.framework */,
@@ -103,7 +105,6 @@
 				4DBDA825161A8870005B0E11 /* TaxiNowAppDelegate.h */,
 				4DBDA826161A8870005B0E11 /* TaxiNowAppDelegate.m */,
 				4DBDA82E161A8870005B0E11 /* MainStoryboard_iPhone.storyboard */,
-				4DBDA831161A8870005B0E11 /* MainStoryboard_iPad.storyboard */,
 				4DBDA834161A8870005B0E11 /* TaxiNowMainViewController.h */,
 				4DBDA835161A8870005B0E11 /* TaxiNowMainViewController.m */,
 				4DBDA837161A8870005B0E11 /* TaxiNowFlipsideViewController.h */,
@@ -186,7 +187,6 @@
 				4DBDA82B161A8870005B0E11 /* Default@2x.png in Resources */,
 				4DBDA82D161A8870005B0E11 /* Default-568h@2x.png in Resources */,
 				4DBDA830161A8870005B0E11 /* MainStoryboard_iPhone.storyboard in Resources */,
-				4DBDA833161A8870005B0E11 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,14 +223,6 @@
 				4DBDA82F161A8870005B0E11 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		4DBDA831161A8870005B0E11 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DBDA832161A8870005B0E11 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

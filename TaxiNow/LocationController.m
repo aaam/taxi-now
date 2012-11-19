@@ -37,7 +37,7 @@
     NSLog(@"didUpdate");
     self.currentLocation = newLocation;
     
-    if(newLocation.horizontalAccuracy <= 100.0f)
+    if(newLocation.horizontalAccuracy <= 15.0f)
     { [locationManager stopUpdatingLocation]; }
     
     NSLog(@"lat = %f, long = %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
@@ -55,13 +55,10 @@
     
     // If it's a relatively recent event, turn off updates to save power
     
-    CLLocation* location = [locations lastObject];
+//    CLLocation* location = [locations lastObject];
+    self.currentLocation = [locations lastObject];
     
-//TODO: how can I make location an instance property?
-//    self.currentLocation = [locations lastObject];
-    
-    NSDate* eventDate = location.timestamp;
-//    NSDate* eventDate = currentLocation.timestamp;
+    NSDate* eventDate = currentLocation.timestamp;
     
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     
@@ -71,13 +68,17 @@
         
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
               
-              location.coordinate.latitude,
-//              currentLocation.coordinate.latitude,
-              location.coordinate.longitude);
-//              currentLocation.coordinate.longitude);
+              currentLocation.coordinate.latitude,
+              currentLocation.coordinate.longitude);
         NSLog(@"%@", locations[0]);
         
     }
+    
+//    Stop updating location when desired accuracy achieved
+    if(currentLocation.horizontalAccuracy <= 15.0f)
+        {
+            [locationManager stopUpdatingLocation];
+        }
     
 }
 

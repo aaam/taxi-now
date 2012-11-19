@@ -8,6 +8,7 @@
 
 #import "TaxiNowFlipsideViewController.h"
 #import "LocationController.h"
+#import "SendLocation.h"
 
 @interface TaxiNowMainViewController : UIViewController <TaxiNowFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
 
@@ -20,7 +21,9 @@
 //@property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *coordinates;
 
+// Do these line violate MVC (controller declared in view)?
 @property (strong, nonatomic) LocationController *locationController;
+@property (strong, nonatomic) SendLocation *messageController;
 
 @end
 

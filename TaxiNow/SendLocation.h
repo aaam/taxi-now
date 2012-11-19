@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SendLocation : NSObject
+@interface SendLocation : UIViewController <MFMailComposeViewControllerDelegate>
+
+@property (copy, nonatomic) NSString *emailAddress;
+
+- (void) sendMessage;
 
 @end

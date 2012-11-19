@@ -14,6 +14,7 @@
 
 @implementation TaxiNowMainViewController
 @synthesize coordinates, locationController;
+@synthesize messageController;
 
 - (void)viewDidLoad
 {
@@ -33,12 +34,7 @@
 
 - (void)flipsideViewControllerDidFinish:(TaxiNowFlipsideViewController *)controller
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-        self.flipsidePopoverController = nil;
-    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
@@ -50,21 +46,17 @@
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
-        
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
-            self.flipsidePopoverController = popoverController;
-            popoverController.delegate = self;
-        }
     }
 }
 
+// Switch to FlipsideView
 - (IBAction)togglePopover:(id)sender
 {
     if (self.flipsidePopoverController) {
         [self.flipsidePopoverController dismissPopoverAnimated:YES];
         self.flipsidePopoverController = nil;
     } else {
+//        self.flipsidePopoverController.emailAddress = @"blah@test.com";
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
 }
@@ -79,6 +71,16 @@
     NSString *coords = [NSString stringWithFormat:@"%@, %@", lat, long_];
     
     self.coordinates.text = coords;
+    
+    // Send lat and long to email view
+//    messageController = [[SendLocation alloc] init];
+//    messageController.mailComposeDelegate = self;
+    [messageController sendMessage];
+    
+////    presentModalViewController works from here, but not from sendLocation.m - why?
+    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+//    controller.mailComposeDelegate = self;
+    if (controller) [self presentModalViewController:controller animated:YES];
     
 }
 
