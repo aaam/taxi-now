@@ -16,14 +16,17 @@
 
 // This is the callTaxi button interface
 - (IBAction)callTaxi:(UIButton *)sender;
+- (IBAction)sendMessage:(UIButton *)sender;
 
 // This is the text label output interface
-//@property (weak, nonatomic) IBOutlet UILabel *latitude;
-@property (weak, nonatomic) IBOutlet UILabel *coordinates;
+//@property (weak, nonatomic) IBOutlet UITextView *coordinates;
+@property (weak, nonatomic) IBOutlet UILabel *coordinatesLabel;
 
 // Do these line violate MVC (controller declared in view)?
 @property (strong, nonatomic) LocationController *locationController;
 @property (strong, nonatomic) SendLocation *messageController;
+
+@property (strong, nonatomic) NSString *coordinatesString;
 
 @end
 

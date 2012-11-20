@@ -13,8 +13,9 @@
 @end
 
 @implementation TaxiNowMainViewController
-@synthesize coordinates, locationController;
+@synthesize coordinatesLabel, locationController;
 @synthesize messageController;
+@synthesize coordinatesString;
 
 - (void)viewDidLoad
 {
@@ -68,27 +69,24 @@
     // Send lat and long to label
     NSNumber *lat = [NSNumber numberWithDouble: locationController.currentLocation.coordinate.latitude];
     NSNumber *long_ = [NSNumber numberWithDouble: locationController.currentLocation.coordinate.longitude];
-    NSString *coords = [NSString stringWithFormat:@"%@, %@", lat, long_];
     
-    self.coordinates.text = coords;
+//    [coordinates setDataDetectorTypes:UIDataDetectorTypeAddress];
+    coordinatesString = [NSString stringWithFormat:@"%@, %@", lat, long_];
+    coordinatesLabel.text = coordinatesString;
     
-    // Send lat and long to email view
-//    messageController = [[SendLocation alloc] init];
-//    messageController.mailComposeDelegate = self;
-//    [messageController sendMessage: sender];
+}
+
+// Send lat and long to email view
+- (IBAction)sendMessage:(UIButton *)sender {
     
-////    presentModalViewController works from here, but not from sendLocation.m - why?
-//    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
-//    controller.mailComposeDelegate = self;
-//    if (controller) [self presentModalViewController:controller animated:YES];
-    
+    ////    presentModalViewController works from here, but not from sendLocation.m - why?
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
     controller.mailComposeDelegate = self;
     
     NSArray *receipients = @[@"murphman.b@gmail.com"];
     [controller setToRecipients: receipients];
     [controller setSubject:@"Coordinates"];
-    [controller setMessageBody:coords isHTML:YES];
+    [controller setMessageBody:self.coordinatesString isHTML:YES];
     if (controller) [self presentModalViewController:controller animated:YES];
     
 }
@@ -105,7 +103,7 @@
 }
 
 - (void)viewDidUnload {
-    [self setCoordinates:nil];
+    [self setCoordinatesLabel:nil];
     [super viewDidUnload];
 }
 @end
