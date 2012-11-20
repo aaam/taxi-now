@@ -79,6 +79,10 @@
 // Send lat and long to email view
 - (IBAction)sendMessage:(UIButton *)sender {
     
+    //    messageController = [[SendLocation alloc] init];
+    //    messageController.mailComposeDelegate = self;
+    //    [messageController sendMessage: sender];
+    
     ////    presentModalViewController works from here, but not from sendLocation.m - why?
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
     controller.mailComposeDelegate = self;
