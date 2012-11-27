@@ -27,14 +27,15 @@
     [locationController startUpdatingLocation];
 }
 
-//Appear runs every time it shows
+//Appear runs every time view shows
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setEmail:) name:@"EmailSaved" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storeEmail:) name:@"EmailSaved" object:nil];
+    
 }
 
-- (void) setEmail: (NSString*) theEmail
+- (void) storeEmail: (NSString*) theEmail
 {
     self.email = theEmail;
 }

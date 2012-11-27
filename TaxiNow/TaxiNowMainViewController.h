@@ -22,6 +22,7 @@
 
 // This is the text label output interface
 @property (weak, nonatomic) IBOutlet UILabel *coordinatesLabel;
+//@property (weak, nonatomic) IBOutlet UITextView *coordinatesLabel;
 
 // Do these line violate MVC (controller declared in view)?
 @property (strong, nonatomic) LocationController *locationController;
