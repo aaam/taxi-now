@@ -110,9 +110,9 @@
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
     
-//        NSArray *receipients = @[@"murphman.b@gmail.com"];
-        NSArray *receipients = @[email];
-        [controller setToRecipients: receipients];
+//        NSArray *recipients = @[@"murphman.b@gmail.com"];
+        NSArray *recipients = @[email];
+        [controller setToRecipients: recipients];
         [controller setSubject:@"Coordinates"];
         [controller setMessageBody:self.coordinatesString isHTML:YES];
         if (controller) [self presentModalViewController:controller animated:YES];
