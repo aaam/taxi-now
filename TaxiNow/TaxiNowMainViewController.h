@@ -8,9 +8,11 @@
 
 #import "TaxiNowFlipsideViewController.h"
 #import "LocationController.h"
-#import "SendLocation.h"
+//#import "SendLocation.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface TaxiNowMainViewController : UIViewController <TaxiNowFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface TaxiNowMainViewController : UIViewController <TaxiNowFlipsideViewControllerDelegate, UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 
@@ -19,7 +21,6 @@
 - (IBAction)sendMessage:(UIButton *)sender;
 
 // This is the text label output interface
-//@property (weak, nonatomic) IBOutlet UITextView *coordinates;
 @property (weak, nonatomic) IBOutlet UILabel *coordinatesLabel;
 
 // Do these line violate MVC (controller declared in view)?
@@ -27,6 +28,8 @@
 @property (strong, nonatomic) SendLocation *messageController;
 
 @property (strong, nonatomic) NSString *coordinatesString;
+@property (strong, nonatomic) NSString *email;
+
 
 @end
 

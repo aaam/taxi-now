@@ -57,6 +57,7 @@
     // TODO: send emailAddress to SendLocation?
 //    self.emailAddress = self.textField.text;
     sendLocation.emailAddress = self.textField.text;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EmailSaved" object:self.textField.text];
     NSLog(@"Address entered - %@", sendLocation.emailAddress);
     
     [self.delegate flipsideViewControllerDidFinish:self];

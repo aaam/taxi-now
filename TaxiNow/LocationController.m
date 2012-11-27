@@ -41,9 +41,6 @@
     { [locationManager stopUpdatingLocation]; }
     
     NSLog(@"lat = %f, long = %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
-    
-    // newLocation.coordinate.latitude
-	// newLocation.coordinate.longitude
 }
 
 // didUpdateLocations for iOS 6
@@ -55,11 +52,8 @@
     
     // If it's a relatively recent event, turn off updates to save power
     
-//    CLLocation* location = [locations lastObject];
     self.currentLocation = [locations lastObject];
-    
     NSDate* eventDate = currentLocation.timestamp;
-    
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     
     if (abs(howRecent) < 15.0) {
@@ -67,7 +61,6 @@
         // If the event is recent, do something with it.
         
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
-              
               currentLocation.coordinate.latitude,
               currentLocation.coordinate.longitude);
         NSLog(@"%@", locations[0]);
@@ -97,19 +90,7 @@
                                cancelButtonTitle:@"OK"
                                otherButtonTitles:nil];
         [alert show];
-    }
-    
+    }    
 }
-
-//- (void) findLocation {
-//    //    self.locationManager = [[CLLocationManager alloc] init];
-//    //    self.locationManager.delegate = self;
-//    [locationManager startUpdatingLocation];
-//    NSLog(@"findLocation");
-//    //    NSLog(@"%f", locationManager.desiredAccuracy);
-//    //    NSLog(@"%f", kCLLocationAccuracyBest);
-//    //    locationManager.didUpdateToLocation;
-//    //    NSLog(@"lat = %f, long = %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
-//}
 
 @end

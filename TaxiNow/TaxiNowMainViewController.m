@@ -16,13 +16,27 @@
 @synthesize coordinatesLabel, locationController;
 @synthesize messageController;
 @synthesize coordinatesString;
+@synthesize email;
 
+//Load only runs once
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     locationController = [[LocationController alloc] init];
     [locationController startUpdatingLocation];
+}
+
+//Appear runs every time it shows
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setEmail:) name:@"EmailSaved" object:nil];
+}
+
+- (void) setEmail: (NSString*) theEmail
+{
+    self.email = theEmail;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,32 +84,47 @@
     NSNumber *lat = [NSNumber numberWithDouble: locationController.currentLocation.coordinate.latitude];
     NSNumber *long_ = [NSNumber numberWithDouble: locationController.currentLocation.coordinate.longitude];
     
-//    [coordinates setDataDetectorTypes:UIDataDetectorTypeAddress];
+//    [coordinatesLabel setDataDetectorTypes:UIDataDetectorTypeAddress];
     coordinatesString = [NSString stringWithFormat:@"%@, %@", lat, long_];
     coordinatesLabel.text = coordinatesString;
     
 }
 
-// Send lat and long to email view
+// Send lat and long to destination
 - (IBAction)sendMessage:(UIButton *)sender {
     
-    //    messageController = [[SendLocation alloc] init];
-    //    messageController.mailComposeDelegate = self;
-    //    [messageController sendMessage: sender];
-    
-    ////    presentModalViewController works from here, but not from sendLocation.m - why?
-    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
-    controller.mailComposeDelegate = self;
-    
-    NSArray *receipients = @[@"murphman.b@gmail.com"];
-    [controller setToRecipients: receipients];
-    [controller setSubject:@"Coordinates"];
-    [controller setMessageBody:self.coordinatesString isHTML:YES];
-    if (controller) [self presentModalViewController:controller animated:YES];
+    [self sendResults];
     
 }
 
-//Move to mail view controller
+//Method stub - designed to allow program to determine how to send message
+-(void) sendResults {
+    
+    //    Send my email only implemented method
+    [self sendEmail];
+}
+
+- (void) sendEmail {
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+    
+//        NSArray *receipients = @[@"murphman.b@gmail.com"];
+        NSArray *receipients = @[email];
+        [controller setToRecipients: receipients];
+        [controller setSubject:@"Coordinates"];
+        [controller setMessageBody:self.coordinatesString isHTML:YES];
+        if (controller) [self presentModalViewController:controller animated:YES];
+    }
+    else {
+        // Handle the error
+        NSLog(@"Device is unable to send email in its current state.");
+    }
+    
+}
+
+//Dimiss email view when finished
 - (void)mailComposeController:(MFMailComposeViewController*)controller
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError*)error;
