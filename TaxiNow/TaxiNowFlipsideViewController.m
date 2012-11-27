@@ -14,7 +14,6 @@
 
 @implementation TaxiNowFlipsideViewController
 @synthesize textField;
-@synthesize sendLocation;
 //@ synthesize emailAddress;
 
 - (void)awakeFromNib
@@ -28,8 +27,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    NSLog(@"%@", self.emailAddress);
-    sendLocation = [[SendLocation alloc] init];
-    NSLog(@"%@", sendLocation.emailAddress);
 //    self.textField.text = sendLocation.emailAddress;
     self.textField.text = @"blah@test.com";
 }
@@ -56,9 +53,9 @@
     // Save textField value as emailAddress
     // TODO: send emailAddress to SendLocation?
 //    self.emailAddress = self.textField.text;
-    sendLocation.emailAddress = self.textField.text;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"EmailSaved" object:self.textField.text];
-    NSLog(@"Address entered - %@", sendLocation.emailAddress);
+    NSString *email = self.textField.text;
+    NSLog(@"Email submitted - %@", email);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EmailSaved" object:email];
     
     [self.delegate flipsideViewControllerDidFinish:self];
 }

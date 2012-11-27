@@ -24,10 +24,6 @@
 // Storyboad; select outlet delegate
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
-@property (copy, nonatomic) NSString *emailAddress;
-
-@property (strong, nonatomic) SendLocation *sendLocation;
-
 - (IBAction)done:(id)sender;
 
 @end
