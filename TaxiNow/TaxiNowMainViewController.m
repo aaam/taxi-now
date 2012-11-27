@@ -31,12 +31,16 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storeEmail:) name:@"EmailSaved" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(storeEmail:)
+                                                 name:@"EmailSaved"
+                                               object:nil];
     
 }
 
-- (void) storeEmail: (NSString*) theEmail
+- (void) storeEmail:(NSNotification *)notification
 {
+    NSString *theEmail = notification.object;
     self.email = theEmail;
 }
 
